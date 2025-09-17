@@ -57,6 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // LinkN Lights Brand Colors
+        "midnight-navy": "hsl(var(--midnight-navy))",
+        "warm-white": "hsl(var(--warm-white))",
+        "electric-aqua": "hsl(var(--electric-aqua))",
+        "warm-orange": "hsl(var(--warm-orange))",
+        "golden-glow": "hsl(var(--golden-glow))",
+        "soft-white": "hsl(var(--soft-white))",
       },
       borderRadius: {
         lg: "var(--radius)",

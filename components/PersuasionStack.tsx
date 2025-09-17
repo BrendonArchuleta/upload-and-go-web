@@ -16,16 +16,14 @@ const PersuasionStack: React.FC = () => {
       icon: <RefreshCw className="w-12 h-12" />,
       title: 'Bulb-to-Bulb System',
       description: 'Revolutionary design lets you remove any bulb and add new string sections. Create custom patterns, extend displays, or modify sections without rewiring anything.',
-      image: '/laceys-hands-1-copy-copy.jpg',
-      image: '/images/laceys-hands-1-copy-copy.jpg',
+      image: '/lacey-headshot.jpg',
       reverse: false
     },
     {
       icon: <Home className="w-12 h-12" />,
       title: 'Year-Round Home Lighting',
       description: 'Beautiful enough for everyday use, our warm white lights create perfect ambiance for patios, gardens, and outdoor living spaces throughout the year.',
-      image: '/family-copy.jpg',
-      image: '/images/family-copy.jpg',
+      image: '/family.jpg',
       reverse: false
     },
     {
@@ -38,8 +36,8 @@ const PersuasionStack: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-dark-bg">
-      <div className="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-midnight-navy">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {features.map((feature, index) => (
           <div
             key={index}
@@ -51,13 +49,13 @@ const PersuasionStack: React.FC = () => {
               className={`animate-fade-up ${feature.reverse ? 'lg:col-start-2' : ''}`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="flex items-center mb-6 text-accent">
+              <div className="flex items-center mb-6 text-electric-aqua">
                 {feature.icon}
               </div>
-              <h3 className="text-3xl font-bold text-white mb-6">
+              <h3 className="text-3xl font-bold text-warm-white mb-6">
                 {feature.title}
               </h3>
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg text-warm-white/80 leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -67,7 +65,7 @@ const PersuasionStack: React.FC = () => {
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className="w-full h-96 object-cover rounded-lg shadow-xl"
+                  className="w-full h-96 object-cover rounded-lg shadow-xl animate-glow"
                 />
               </div>
             )}
