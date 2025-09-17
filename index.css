@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    background-color: theme('colors.midnight-navy');
+    color: theme('colors.warm-white');
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+    color: theme('colors.warm-white');
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+  
+  .animate-typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #73c3c1;
+    animation: typewriter 2s steps(20) infinite alternate;
+  }
+  
+  .animate-snow {
+    animation: snowfall linear infinite;
+  }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes typewriter {
+    0% {
+      border-right-color: #73c3c1;
+    }
+    50% {
+      border-right-color: transparent;
+    }
+    100% {
+      border-right-color: #73c3c1;
+    }
+  }
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Warm slider custom styling */
+.warm-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #FFB366, #FFC649);
+  cursor: pointer;
+  border: 3px solid #0B0D1A;
+  box-shadow: 0 4px 12px rgba(255, 179, 102, 0.4);
+}
+
+.warm-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #FFB366, #FFC649);
+  cursor: pointer;
+  border: 3px solid #0B0D1A;
+  box-shadow: 0 4px 12px rgba(255, 179, 102, 0.4);
+}
+  
+  @keyframes snowfall {
+    0% {
+      transform: translateY(-100vh) translateX(0px);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) translateX(100px);
+      opacity: 0;
+    }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0D1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1EC8FF;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #16A8D8;
+}
+
+/* Custom slider styles */
+.slider {
+  background: linear-gradient(to right, #FFB366 0%, #FFC649 33%, #FFE135 66%, #FFFFFF 100%);
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #1EC8FF;
+  cursor: pointer;
+  border: 2px solid #0B0D1A;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #1EC8FF;
+  cursor: pointer;
+  border: 2px solid #0B0D1A;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus {
+  outline: 2px solid #1EC8FF;
+  outline-offset: 2px;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth transitions for interactive elements */
+button, a {
+  transition: all 0.3s ease;
+}
+
+/* Ensure proper contrast for accessibility */
+.text-contrast {
+  color: #F5F7FA;
+  background-color: #0B0D1A;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-typewriter,
+  .animate-snow,
+  .animate-pulse,
+  .animate-bounce,
+  .animate-ping,
+  .animate-spin {
+    animation: none !important;
+  }
+  
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-midnight-navy {
+    background-color: #000000;
+  }
+  
+  .text-warm-white {
+    color: #FFFFFF;
+  }
+  
+  .text-electric-aqua {
+    color: #00FFFF;
+  }
+}
